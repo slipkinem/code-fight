@@ -52,7 +52,7 @@ function parserRSSFees(rss) {
     }
 
     var items = handler.dom.items;
-    var itemsFuck;
+    var itemsFuck = '';
     for (var index in items){
         console.log(items[index].link);
         console.log(items[index].title);
