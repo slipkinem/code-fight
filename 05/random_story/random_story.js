@@ -51,9 +51,16 @@ function parserRSSFees(rss) {
         return next (new Error('no rss item found'));
     }
 
-    var item = handler.dom.items.shift();
-    console.log(item.title);
-    console.log(item.link);
+    var items = handler.dom.items;
+    var itemsFuck;
+    for (var index in items){
+        console.log(items[index].link);
+        console.log(items[index].title);
+        itemsFuck += items[index].title + '\n' + items[index].link + '\n';
+    }
+    fs.writeFile('./write.txt',itemsFuck,function (err) {
+        if (err) throw err;
+    })
 }
 
 var tasks = [checkForRSSFile,readRSSFile,downLoadRSSFeed,parserRSSFees];
