@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "htmlparser": "^1.7.7",
+    "request": "^2.78.0"
+  }
+}
