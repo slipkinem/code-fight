@@ -13,12 +13,17 @@ function checkIfComplete() {
     }
 }
 
+/**
+ * 将读取的文件
+ * @param text
+ */
 function countWordsInText(text) {
     var words = text
         .toString()
         .toLowerCase()
-        .split(/\W+/)
+        .split(/\W+/) //匹配所有非单词
         .sort();
+    console.log(words);
     for (var index in words){
         var word = words[index];
         if (word){
@@ -40,7 +45,7 @@ fs.readdir(filesDir,function (err, files) {
                     checkIfComplete();
                 });
             }
-        })(filesDir + '/' + files[index]);
+        })(filesDir + '/' + files[index]); //这样加下来为文件的地址
         tasks.push(task);
     }
     for (var i in tasks) {
