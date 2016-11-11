@@ -30,7 +30,7 @@ function show(response) {
 
     var html = '<html><head><meta charset="utf-8"><title>todoList</title></head>'+
                 '<body><h1>todoList</h1><ul>'
-                +items.map(function(item){
+                +items.map(function(item){   //map计算后会返回一个新数组，foreach只是循环做事
                     return '<li>'+ item + '</li>'
                 }).join('')
                 +'</ul><form action="/" method="post">'
