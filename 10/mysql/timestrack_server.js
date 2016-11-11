@@ -9,7 +9,7 @@ const work = require('./timestrack');
 var db = mysql.createConnection({
     host: 'localhost',
     user: 'slipkinem',
-    password: 'ls123456',
+    password: '1234',
     database: 'slipkinem'
 });
 

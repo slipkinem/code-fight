@@ -28,6 +28,7 @@ exports.parseReceivedData = function (request, callback) {
     request.on('end',function () {
         var data = qs.parse(body);
         callback(data);
+        console.log(data);
     })
 };
 /**
@@ -131,7 +132,7 @@ exports.showArchived = function (db, response) {
  * @param rows
  */
 exports.workHitListHtml = function(rows){
-    var html = '<table>';
+    var html = '<table border="1">';
     for (var index in rows) {
         html += '<tr>';
         html += '<td>' + rows[index].date + '</td>';
@@ -151,7 +152,7 @@ exports.workHitListHtml = function(rows){
  */
 exports.workFormHtml = function () {
     return  `<form method="post" action="/">
-                <p>Data (YYYY-MM-DD):<br/><input type="text" name="data"></p>
+                <p>Data (YYYY-MM-DD):<br/><input type="text" name="date"></p>
                 <p>Hours worked:<br/><input type="text" name="hours"></p>
                 <p>Description:<br/></p>
                 <textarea name="description" cols="30" rows="10"></textarea>
