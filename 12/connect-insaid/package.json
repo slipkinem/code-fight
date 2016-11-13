@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "connect": "^3.5.0"
+  }
+}
