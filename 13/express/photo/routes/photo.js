@@ -76,4 +76,20 @@ exports.submit = function (dir) {
         })
     }
 };
+/**
+ * 下载文件
+ * @param dir
+ * @returns {Function}
+ */
+exports.download = function (dir) {
+    return function (request, response, next) {
+        var id = request.params.id;
 
+        Photo.findById(id,function (err, photo) {
+            if (err) return next(err);
+
+            var path = join(dir,photo.path);
+            response.download(path,photo.name+'.jpeg'); //自定义文件名字
+        })
+    }
+};

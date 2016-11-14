@@ -58,7 +58,7 @@ app.get('/', photos.list);
 app.get('/users', user.list);
 app.get('/upload',photos.form);
 app.post('/upload',photos.submit(app.get('photos'))); //get的为set的photos
-
+app.get('/photo/:id/download',photos.download(app.get('photos')));
 
 /**
  * 启动服务器
