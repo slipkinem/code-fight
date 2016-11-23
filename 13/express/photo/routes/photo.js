@@ -54,9 +54,7 @@ exports.form = function (request, response) {
  * @param dir
  * @returns {Function}
  */
-exports.submit = function (dir) {
-    console.log(dir);
-    return function (req, res, next) {
+exports.submit = dir => (req, res, next) => {
         var img = req.files.photo.image;
         var name = req.body.photo.name || img.name;
         var path = join(dir+'',img.name);
@@ -74,15 +72,15 @@ exports.submit = function (dir) {
                 res.redirect('/');   //如果发生错误，则跳转到首页
             })
         })
-    }
-};
+    };
+
 /**
  * 下载文件
  * @param dir
  * @returns {Function}
  */
-exports.download = function (dir) {
-    return function (request, response, next) {
+exports.download = dir =>
+    function (request, response, next) {
         var id = request.params.id;
 
         Photo.findById(id,function (err, photo) {
@@ -91,5 +89,4 @@ exports.download = function (dir) {
             var path = join(dir,photo.path);
             response.download(path,photo.name+'.jpeg'); //自定义文件名字
         })
-    }
-};
+    };

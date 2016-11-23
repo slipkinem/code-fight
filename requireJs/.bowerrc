@@ -1,0 +1,6 @@
+{
+  "analytics": false,
+  "directory": "./vendor",
+  "interactive": false,
+  "json": "bower.json"
+}

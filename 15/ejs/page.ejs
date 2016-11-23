@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .entry-title{font-weight: bold}
+        .entry-date{font-style: italic;}
+        .entry-body{margin-bottom: 1em}
+    </style>
+</head>
+<body>
+    <% entries.map(function (entry) { %>
+        <div class="entry-title"><%= entry.title %></div>
+        <div class="entry-date"><%= entry.date %></div>
+        <div class="entry-body"><%= entry.body %></div>
+    <% }) %>
+</body>
+</html>
