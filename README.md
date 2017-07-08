@@ -1,5 +1,5 @@
 # code-fight
-code-node-fight
+code-node-fight with Node.js in action
 
 这是我进行学习node.js实战的一个目录
 
